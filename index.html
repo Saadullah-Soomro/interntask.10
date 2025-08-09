@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saad's Travel Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <h1 class="logo">
+                    <i class="fas fa-compass"></i>
+                    Saad's Travel Blog
+                </h1>
+            </div>
+            
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#destinations" class="nav-link">Destinations</a></li>
+                    <li class="nav-item"><a href="#tips" class="nav-link">Travel Tips</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                    <button class="burger-menu" id="burger-menu" aria-label="Toggle navigation">
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Exploring the Hidden Gems of Bali</h2>
+                <p class="hero-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Discover the untold stories and breathtaking landscapes that await your next adventure.
+                </p>
+                <button class="cta-button">
+                    <span>Read More</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Travel Posts Grid -->
+                <section class="blog-grid" id="destinations">
+                    <header class="section-header">
+                        <h2 class="section-title">Latest Adventures</h2>
+                        <p class="section-subtitle">Discover amazing destinations and travel stories from around the world</p>
+                    </header>
+                    
+                    <div class="posts-grid">
+                        <article class="post-card">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Santorini sunset views" loading="lazy">
+                                <div class="post-category">Beaches</div>
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title">Santorini's Magical Sunsets</h3>
+                                <p class="post-excerpt">Discover the breathtaking beauty of Santorini's world-famous sunsets. From the white-washed buildings to the crystal-clear waters, this Greek island paradise offers unforgettable moments that will stay with you forever.</p>
+                                <div class="post-meta">
+                                    <span class="post-date">
+                                        <i class="far fa-calendar"></i>
+                                        March 15, 2024
+                                    </span>
+                                    <span class="read-time">
+                                        <i class="far fa-clock"></i>
+                                        5 min read
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="post-card">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Swiss Alps mountain adventure" loading="lazy">
+                                <div class="post-category">Mountains</div>
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title">Alpine Adventures in Switzerland</h3>
+                                <p class="post-excerpt">Experience the majestic Swiss Alps with hiking trails, pristine lakes, and snow-capped peaks. From the Matterhorn to Jungfraujoch, Switzerland offers some of the world's most spectacular mountain scenery.</p>
+                                <div class="post-meta">
+                                    <span class="post-date">
+                                        <i class="far fa-calendar"></i>
+                                        March 12, 2024
+                                    </span>
+                                    <span class="read-time">
+                                        <i class="far fa-clock"></i>
+                                        7 min read
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="post-card">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Iceland northern lights" loading="lazy">
+                                <div class="post-category">Adventure</div>
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title">Chasing Northern Lights in Iceland</h3>
+                                <p class="post-excerpt">Iceland's dramatic landscapes and clear skies make it one of the best places on Earth to witness the Aurora Borealis. Learn the best times to visit and locations for this magical natural phenomenon.</p>
+                                <div class="post-meta">
+                                    <span class="post-date">
+                                        <i class="far fa-calendar"></i>
+                                        March 8, 2024
+                                    </span>
+                                    <span class="read-time">
+                                        <i class="far fa-clock"></i>
+                                        6 min read
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="post-card">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Tokyo city streets and culture" loading="lazy">
+                                <div class="post-category">City Escapes</div>
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title">Tokyo: Where Tradition Meets Modern</h3>
+                                <p class="post-excerpt">Explore the vibrant metropolis of Tokyo, where ancient temples stand alongside futuristic skyscrapers. From bustling street markets to serene gardens, Tokyo offers an incredible blend of old and new.</p>
+                                <div class="post-meta">
+                                    <span class="post-date">
+                                        <i class="far fa-calendar"></i>
+                                        March 5, 2024
+                                    </span>
+                                    <span class="read-time">
+                                        <i class="far fa-clock"></i>
+                                        8 min read
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="post-card">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="African safari wildlife adventure" loading="lazy">
+                                <div class="post-category">Adventure</div>
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title">Safari Encounters in Kenya</h3>
+                                <p class="post-excerpt">Witness the incredible wildlife of Kenya's national parks and reserves. From the Great Migration in Maasai Mara to the elephants of Amboseli, Kenya offers some of Africa's most spectacular safari experiences.</p>
+                                <div class="post-meta">
+                                    <span class="post-date">
+                                        <i class="far fa-calendar"></i>
+                                        March 1, 2024
+                                    </span>
+                                    <span class="read-time">
+                                        <i class="far fa-clock"></i>
+                                        4 min read
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="post-card">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Italian food and culture experience" loading="lazy">
+                                <div class="post-category">Food & Culture</div>
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title">Culinary Journey Through Tuscany</h3>
+                                <p class="post-excerpt">Indulge in the flavors of Tuscany, from world-renowned wines to traditional pasta dishes. Discover local markets, family-run trattorias, and cooking classes that celebrate Italy's rich culinary heritage.</p>
+                                <div class="post-meta">
+                                    <span class="post-date">
+                                        <i class="far fa-calendar"></i>
+                                        February 28, 2024
+                                    </span>
+                                    <span class="read-time">
+                                        <i class="far fa-clock"></i>
+                                        6 min read
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Search Bar -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Search Adventures</h3>
+                        <form class="search-form">
+                            <div class="search-box">
+                                <input type="search" placeholder="Search destinations..." class="search-input" aria-label="Search destinations">
+                                <button type="submit" class="search-button" aria-label="Search">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Travel Categories</h3>
+                        <ul class="categories-list">
+                            <li class="category-item">
+                                <a href="#beaches" class="category-link">
+                                    <i class="fas fa-umbrella-beach"></i>
+                                    Beaches
+                                    <span class="post-count">12</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#mountains" class="category-link">
+                                    <i class="fas fa-mountain"></i>
+                                    Mountains
+                                    <span class="post-count">8</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#cities" class="category-link">
+                                    <i class="fas fa-city"></i>
+                                    City Escapes
+                                    <span class="post-count">15</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#adventure" class="category-link">
+                                    <i class="fas fa-hiking"></i>
+                                    Adventure
+                                    <span class="post-count">10</span>
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#culture" class="category-link">
+                                    <i class="fas fa-utensils"></i>
+                                    Food & Culture
+                                    <span class="post-count">7</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Recent Trips -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Recent Trips</h3>
+                        <ul class="recent-trips">
+                            <li class="recent-trip">
+                                <div class="trip-thumbnail">
+                                    <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Bali temples exploration" loading="lazy">
+                                </div>
+                                <div class="trip-content">
+                                    <h4 class="trip-title">Temple Hopping in Bali</h4>
+                                    <span class="trip-date">March 10, 2024</span>
+                                </div>
+                            </li>
+                            <li class="recent-trip">
+                                <div class="trip-thumbnail">
+                                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Norway fjords adventure" loading="lazy">
+                                </div>
+                                <div class="trip-content">
+                                    <h4 class="trip-title">Fjords of Norway</h4>
+                                    <span class="trip-date">March 6, 2024</span>
+                                </div>
+                            </li>
+                            <li class="recent-trip">
+                                <div class="trip-thumbnail">
+                                    <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Morocco desert expedition" loading="lazy">
+                                </div>
+                                <div class="trip-content">
+                                    <h4 class="trip-title">Sahara Desert Magic</h4>
+                                    <span class="trip-date">March 2, 2024</span>
+                                </div>
+                            </li>
+                            <li class="recent-trip">
+                                <div class="trip-thumbnail">
+                                    <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Peru Machu Picchu trek" loading="lazy">
+                                </div>
+                                <div class="trip-content">
+                                    <h4 class="trip-title">Machu Picchu Trek</h4>
+                                    <span class="trip-date">February 25, 2024</span>
+                                </div>
+                            </li>
+                            <li class="recent-trip">
+                                <div class="trip-thumbnail">
+                                    <img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Greek islands adventure" loading="lazy">
+                                </div>
+                                <div class="trip-content">
+                                    <h4 class="trip-title">Greek Island Hopping</h4>
+                                    <span class="trip-date">February 20, 2024</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Follow Our Journey</h3>
+                        <div class="social-links">
+                            <a href="#facebook" class="social-link facebook" aria-label="Follow on Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#instagram" class="social-link instagram" aria-label="Follow on Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#pinterest" class="social-link pinterest" aria-label="Follow on Pinterest">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                            <a href="#youtube" class="social-link youtube" aria-label="Subscribe on YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Saad's Travel Blog</h3>
+                    <p class="footer-description">
+                        Inspiring travelers worldwide to explore, discover, and create unforgettable memories. Join our community of adventure seekers and wanderers.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#facebook" class="footer-social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#instagram" class="footer-social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#pinterest" class="footer-social-link" aria-label="Pinterest">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                        <a href="#youtube" class="footer-social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home" class="footer-link">Home</a></li>
+                        <li><a href="#destinations" class="footer-link">Destinations</a></li>
+                        <li><a href="#tips" class="footer-link">Travel Tips</a></li>
+                        <li><a href="#contact" class="footer-link">Contact</a></li>
+                        <li><a href="#about" class="footer-link">About Us</a></li>
+                        <li><a href="#privacy" class="footer-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Info</h4>
+                    <div class="contact-info">
+                        <p class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:hello@wanderlustjournal.com" class="contact-link">hello@wanderlustjournal.com</a>
+                        </p>
+                        <p class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+1234567890" class="contact-link">+1 (234) 567-8900</a>
+                        </p>
+                        <p class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Lorem ipsum dolor sit amet.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Saad's Travel Blog. All rights reserved. Made with <i class="fas fa-heart"></i> for travelers.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Burger menu toggle
+        const burgerMenu = document.getElementById('burger-menu');
+        const nav = document.getElementById('nav');
+
+        burgerMenu.addEventListener('click', () => {
+            nav.classList.toggle('nav-open');
+            burgerMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on nav links
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav-open');
+                burgerMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !burgerMenu.contains(e.target)) {
+                nav.classList.remove('nav-open');
+                burgerMenu.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Hero background rotation
+        const heroBackground = document.querySelector('.hero-background');
+        const heroImages = [
+            'hero section.bg/1.jpg',
+            'hero section.bg/2.jpg',
+            'hero section.bg/3.jpg'
+        ];
+        let currentImageIndex = 0;
+
+        function rotateHeroBackground() {
+            heroBackground.style.backgroundImage = `url('${heroImages[currentImageIndex]}')`;
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+        }
+
+        // Initialize first image
+        rotateHeroBackground();
+
+        // Rotate background every 10 seconds
+        setInterval(rotateHeroBackground, 10000);
+    </script>
+</body>
+</html>
