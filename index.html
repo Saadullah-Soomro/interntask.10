@@ -31,14 +31,32 @@
             </nav>
             
             <div class="header-controls">
+                <button class="header-search-toggle" id="header-search-toggle" aria-label="Toggle search">
+                    <i class="fas fa-search"></i>
+                </button>
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                 </button>
-                    <button class="burger-menu" id="burger-menu" aria-label="Toggle navigation">
+                <button class="burger-menu" id="burger-menu" aria-label="Toggle navigation">
                     <span class="burger-bar"></span>
                     <span class="burger-bar"></span>
                     <span class="burger-bar"></span>
                 </button>
+            </div>
+            
+            <!-- Header Search Bar (Initially Hidden) -->
+            <div class="header-search" id="header-search">
+                <div class="search-container">
+                    <form class="header-search-form">
+                        <input type="search" class="header-search-input" placeholder="Search destinations..." aria-label="Search destinations">
+                        <button type="submit" class="header-search-button" aria-label="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                    <button class="header-search-close" id="header-search-close" aria-label="Close search">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -334,6 +352,44 @@
         </div>
     </main>
 
+    <!-- Newsletter/CTA Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-header">
+                    <h2 class="newsletter-title">Join Our Travel Community</h2>
+                    <p class="newsletter-description">
+                        Get exclusive travel tips, destination guides, and inspiring stories delivered straight to your inbox. 
+                        Never miss an adventure!
+                    </p>
+                </div>
+                <form class="newsletter-form" id="newsletter-form">
+                    <div class="form-group">
+                        <div class="email-input-wrapper">
+                            <input 
+                                type="email" 
+                                id="newsletter-email" 
+                                class="newsletter-input" 
+                                placeholder="Enter your email address" 
+                                required 
+                                aria-label="Email address"
+                            >
+                            <button type="submit" class="newsletter-button" aria-label="Subscribe">
+                                <span class="button-text">Subscribe</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="form-message" id="form-message" role="alert"></div>
+                    </div>
+                    <p class="newsletter-disclaimer">
+                        <i class="fas fa-shield-alt"></i>
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -397,6 +453,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script>
         // Dark mode toggle
@@ -492,6 +553,239 @@
 
         // Rotate background every 10 seconds
         setInterval(rotateHeroBackground, 10000);
+
+        // Header search toggle functionality
+        const headerSearchToggle = document.getElementById('header-search-toggle');
+        const headerSearch = document.getElementById('header-search');
+        const headerSearchClose = document.getElementById('header-search-close');
+        const headerSearchInput = document.querySelector('.header-search-input');
+
+        headerSearchToggle.addEventListener('click', () => {
+            headerSearch.classList.add('active');
+            headerSearchInput.focus();
+        });
+
+        headerSearchClose.addEventListener('click', () => {
+            headerSearch.classList.remove('active');
+            headerSearchInput.value = '';
+        });
+
+        // Close search when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!headerSearch.contains(e.target) && !headerSearchToggle.contains(e.target)) {
+                headerSearch.classList.remove('active');
+            }
+        });
+
+        // Close search on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && headerSearch.classList.contains('active')) {
+                headerSearch.classList.remove('active');
+                headerSearchInput.value = '';
+            }
+        });
+
+        // Newsletter form validation and submission
+        const newsletterForm = document.getElementById('newsletter-form');
+        const newsletterEmail = document.getElementById('newsletter-email');
+        const formMessage = document.getElementById('form-message');
+
+        function showMessage(message, type) {
+            formMessage.textContent = message;
+            formMessage.className = `form-message ${type}`;
+            formMessage.style.display = 'block';
+            
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const email = newsletterEmail.value.trim();
+            
+            if (!email) {
+                showMessage('Please enter your email address.', 'error');
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                showMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Simulate subscription process
+            const submitButton = newsletterForm.querySelector('.newsletter-button');
+            const buttonText = submitButton.querySelector('.button-text');
+            const buttonIcon = submitButton.querySelector('i');
+            
+            submitButton.disabled = true;
+            buttonText.textContent = 'Subscribing...';
+            buttonIcon.className = 'fas fa-spinner fa-spin';
+            
+            setTimeout(() => {
+                showMessage('Thank you for subscribing! Welcome to our travel community.', 'success');
+                newsletterEmail.value = '';
+                submitButton.disabled = false;
+                buttonText.textContent = 'Subscribe';
+                buttonIcon.className = 'fas fa-paper-plane';
+            }, 2000);
+        });
+
+        // Category filtering functionality
+        const categoryLinks = document.querySelectorAll('.category-link');
+        const postCards = document.querySelectorAll('.post-card');
+
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const category = link.textContent.trim().toLowerCase();
+                
+                // Remove active class from all category links
+                categoryLinks.forEach(l => l.classList.remove('active'));
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                postCards.forEach(card => {
+                    const postCategory = card.querySelector('.post-category').textContent.toLowerCase();
+                    
+                    if (category === 'beaches' && postCategory === 'beaches') {
+                        card.style.display = 'block';
+                    } else if (category === 'mountains' && postCategory === 'mountains') {
+                        card.style.display = 'block';
+                    } else if (category === 'city escapes' && postCategory === 'city escapes') {
+                        card.style.display = 'block';
+                    } else if (category === 'adventure' && postCategory === 'adventure') {
+                        card.style.display = 'block';
+                    } else if (category === 'food & culture' && postCategory === 'food & culture') {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Add "Show All" functionality
+        const showAllButton = document.createElement('li');
+        showAllButton.className = 'category-item';
+        showAllButton.innerHTML = `
+            <a href="#all" class="category-link active">
+                <i class="fas fa-globe"></i>
+                All Destinations
+                <span class="post-count">52</span>
+            </a>
+        `;
+        document.querySelector('.categories-list').insertBefore(showAllButton, document.querySelector('.categories-list').firstChild);
+
+        showAllButton.querySelector('.category-link').addEventListener('click', (e) => {
+            e.preventDefault();
+            categoryLinks.forEach(l => l.classList.remove('active'));
+            e.target.classList.add('active');
+            postCards.forEach(card => {
+                card.style.display = 'block';
+            });
+        });
+
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Search functionality (for both header and sidebar)
+        function performSearch(query) {
+            const searchTerm = query.toLowerCase().trim();
+            
+            if (!searchTerm) {
+                postCards.forEach(card => card.style.display = 'block');
+                return;
+            }
+            
+            postCards.forEach(card => {
+                const title = card.querySelector('.post-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.post-excerpt').textContent.toLowerCase();
+                const category = card.querySelector('.post-category').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm) || category.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Header search functionality
+        const headerSearchForm = document.querySelector('.header-search-form');
+        headerSearchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const query = headerSearchInput.value;
+            performSearch(query);
+            headerSearch.classList.remove('active');
+            
+            // Scroll to results
+            document.getElementById('destinations').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+
+        // Sidebar search functionality
+        const sidebarSearchForm = document.querySelector('.search-form');
+        const sidebarSearchInput = document.querySelector('.search-input');
+        sidebarSearchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const query = sidebarSearchInput.value;
+            performSearch(query);
+            
+            // Scroll to results
+            document.getElementById('destinations').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+
+        // Real-time search as user types (debounced)
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        const debouncedSearch = debounce((query) => performSearch(query), 300);
+        
+        sidebarSearchInput.addEventListener('input', (e) => {
+            debouncedSearch(e.target.value);
+        });
+        
+        headerSearchInput.addEventListener('input', (e) => {
+            debouncedSearch(e.target.value);
+        });
     </script>
 </body>
 </html>
